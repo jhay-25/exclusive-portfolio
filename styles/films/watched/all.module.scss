@@ -1,0 +1,60 @@
+@import "/styles/variables";
+@import "/styles/mixins";
+
+.banner {
+  .container1 {
+    background: rgba($color: $black, $alpha: 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    .row1 {
+      .column1 {
+        h1 {
+          font-size: 11vw;
+          font-weight: 600;
+          letter-spacing: -2px;
+          text-align: center;
+
+          @include mediumScreen() {
+            font-size: 56px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.film_section {
+  .container1 {
+    padding: 60px 10px;
+
+    @include mediumScreen() {
+      padding: 60px;
+    }
+
+    .column1 {
+      .films_wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(76px, max-content));
+        grid-gap: 10px;
+        justify-content: center;
+        padding: 10px 0;
+        border-top: 1px solid $gray;
+        border-bottom: 1px solid $gray;
+      }
+
+      .img_wrapper {
+        width: 76px;
+        height: 111px;
+        transition: transform 0.1s ease;
+      }
+
+      .pagination_button {
+        margin: 30px 0;
+      }
+    }
+  }
+}

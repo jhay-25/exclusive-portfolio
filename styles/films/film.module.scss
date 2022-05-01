@@ -1,0 +1,230 @@
+@import "/styles/variables";
+@import "/styles/mixins";
+
+.hero {
+  color: $white;
+
+  &::after {
+    position: absolute;
+    content: "";
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(30, 30, 32);
+    background: radial-gradient(
+      circle,
+      rgba(30, 30, 32, 0.7671840354767184) 0%,
+      rgba(36, 37, 37, 0.3082039911308204) 49%
+    );
+  }
+
+  .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0 30px;
+    z-index: 1;
+  }
+
+  .title {
+    position: relative;
+    font-size: 11vw;
+    font-weight: 600;
+    letter-spacing: -2px;
+    text-shadow: 0 0 50px hsla(0, 0%, 0%, 0.8);
+    text-align: center;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @include mediumScreen() {
+      font-size: 56px;
+    }
+
+    .subtitle {
+      position: absolute;
+      top: -5px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      font-size: 14px;
+      color: rgba($color: $media_button, $alpha: 1);
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-shadow: 0 0 150px hsla(0, 0%, 0%, 0.8);
+      white-space: nowrap;
+    }
+
+    .typing_cursor {
+      animation: blink 1s infinite;
+      font-size: 16vw;
+      text-decoration: none !important;
+
+      @include mediumScreen() {
+        font-size: 90px;
+      }
+    }
+  }
+
+  .row2 {
+    position: absolute;
+    bottom: 40px;
+    width: 22px;
+    height: 42px;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    .mouse {
+      display: block;
+      width: 22px;
+      height: 42px;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      border-radius: 15px;
+
+      .scroll {
+        display: block;
+        width: 3px;
+        height: 3px;
+        margin: 6px auto;
+        border-radius: 4px;
+        background: $white;
+        animation: down 1s infinite;
+      }
+    }
+  }
+}
+
+.recently_watched_section {
+  .container1 {
+    .row1 {
+      h2 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .column {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .row2 {
+      .film_card_container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(93px, max-content));
+        grid-gap: 10px;
+        justify-content: center;
+
+        @include mediumScreen() {
+          grid-template-columns: repeat(auto-fit, minmax(156px, max-content));
+        }
+
+        .card {
+          .img_wrapper {
+            width: 93px;
+            height: 143px;
+            transition: transform 0.1s ease;
+
+            @include mediumScreen() {
+              width: 156px;
+              height: 231px;
+            }
+
+            img {
+              width: 100%;
+              height: 100%;
+              border-radius: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.see_all_section {
+  .container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 10px;
+
+    .see_all_button {
+      width: 148px;
+      height: 30px;
+      padding: 10px 15px;
+      text-transform: capitalize;
+      background: $red;
+      border-radius: 2px;
+      font-weight: 600;
+      font-size: 15px;
+      transition-property: border-radius, background;
+      transition: 100ms ease;
+
+      &:hover {
+        background: $hover_button_red;
+        border-radius: 0px;
+        transition-property: border-radius, background;
+        transition: 100ms ease;
+      }
+    }
+  }
+}
+
+.search_section {
+  .container1 {
+    background: $dark-gray url("./../../public/assets/images/geometry.png");
+
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .form_wrapper {
+      width: 100%;
+      max-width: 1140px;
+      margin: auto;
+    }
+
+    .search_bar {
+      font-size: 16px;
+      padding: 10px;
+      width: 100%;
+
+      height: 46px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes down {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+}

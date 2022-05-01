@@ -1,0 +1,22 @@
+@import "/styles/variables";
+@import "/styles/mixins";
+
+.main {
+  height: 100vh;
+  background: url(../public/assets/images/rosie-fraser-1L71sPT5XKc-unsplash.jpg)
+    no-repeat center;
+  background-size: cover;
+}
+
+.status_container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 100px;
+  bottom: 85px;
+  z-index: 1;
+  max-width: 240px;
+  min-width: 240px;
+  min-height: 105px;
+  height: auto;
+}

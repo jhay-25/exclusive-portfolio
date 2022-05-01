@@ -1,0 +1,87 @@
+@import "/styles/variables";
+
+.trakt_container {
+  position: relative;
+  background: rgba($color: $gray, $alpha: 0.3);
+  backdrop-filter: blur(4px);
+  margin-top: 10px;
+  color: $white;
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 5;
+
+  .backdrop {
+    height: 80px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .row2 {
+    padding: 5px 10px 10px;
+  }
+
+  .last_watched {
+    position: absolute;
+    top: 37%;
+    right: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    color: $media_button;
+    text-shadow: 2px 2px 16px rgba(0, 0, 0, 1);
+  }
+
+  .details_container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .poster_wrapper {
+    position: absolute;
+    display: inline-block;
+    height: 90px;
+    left: 20px;
+    top: 43px;
+    border: 1px solid rgba($color: $gray, $alpha: 0.3);
+
+    img {
+      height: 100%;
+      border-radius: 4px;
+    }
+  }
+
+  .details_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    padding: 5px 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: calc(100% - 70px);
+
+    p {
+      font-size: 14px;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 130%;
+
+      ~ p {
+        color: rgb(151, 151, 151);
+      }
+    }
+
+    a {
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "portfolio-v4",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -p $PORT",
+    "heroku-postbuild": "yarn run build",
+    "eslint": "eslint ."
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^2.6.0",
+    "axios": "^0.21.1",
+    "babel-plugin-styled-components": "^1.13.2",
+    "clsx": "^1.1.1",
+    "gsap": "^3.6.1",
+    "next": "10.2.0",
+    "next-images": "^1.7.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-hook-form": "^7.10.1",
+    "react-rating-stars-component": "^2.2.0",
+    "react-slick": "^0.28.1",
+    "sass": "^1.32.12",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.0",
+    "typewriter-effect": "^2.17.0",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "eslint": "^7.25.0"
+  }
+}

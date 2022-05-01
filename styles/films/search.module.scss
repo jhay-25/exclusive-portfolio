@@ -1,0 +1,157 @@
+@import "/styles/variables";
+@import "/styles/mixins";
+
+.main {
+  padding-top: 84px;
+}
+
+.search_section {
+  .container1 {
+    padding-bottom: 30px;
+
+    .row1 {
+      display: flex;
+
+      .header {
+        padding: 10px 20px;
+        background: $red;
+        border-radius: 6px 6px 0 0;
+
+        h3 {
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .container2 {
+    padding: 0 10px;
+    min-height: calc(60px + 130px + 98px);
+    margin-bottom: 30px;
+
+    @include mediumScreen() {
+      padding: 0 60px;
+    }
+
+    .column1 {
+      .pagination_button {
+        margin: 40px 0;
+      }
+
+      .film_result_container {
+        display: grid;
+        grid-gap: 25px 20px;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(76px, max-content));
+
+        @include mediumScreen() {
+          grid-template-columns: repeat(auto-fit, minmax(136px, max-content));
+          justify-content: flex-start;
+        }
+
+        .img_wrapper {
+          position: relative;
+          border-radius: 2px;
+          overflow: hidden;
+          transition: transform 100ms ease;
+          width: 76px;
+          height: 111px;
+
+          @include mediumScreen() {
+            width: 136px;
+            height: 200px;
+          }
+
+          &:hover {
+            transform: scale(1.01);
+            transition: transform 100ms ease;
+          }
+
+          a {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            &::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              background: linear-gradient(
+                180deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(26, 26, 26, 0.5) 72.92%
+              );
+            }
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+
+          .alt_poster {
+            width: 100%;
+            height: 100%;
+            background: $gray;
+          }
+        }
+
+        .title {
+          display: block;
+          position: absolute;
+          bottom: 10px;
+          right: 0;
+          left: 0;
+          margin: 0 auto;
+          text-align: center;
+          z-index: 1;
+        }
+      }
+
+      .not_found_wrapper {
+        padding: 20px;
+
+        h1 {
+          font-size: 24px;
+
+          @include mediumScreen() {
+            font-size: 40px;
+          }
+        }
+      }
+    }
+  }
+
+  .container3 {
+    background: $dark-gray url("../../public/assets/images/geometry.png");
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .form_wrapper {
+      width: 100%;
+      max-width: 1140px;
+      margin: auto;
+    }
+
+    .search_bar {
+      font-size: 16px;
+      padding: 10px;
+      width: 100%;
+
+      height: 46px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

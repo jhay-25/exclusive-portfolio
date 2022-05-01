@@ -1,0 +1,187 @@
+@import "/styles/mixins";
+@import "/styles/variables";
+
+.update_form_section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  backdrop-filter: blur(2px);
+
+  &::after {
+    position: absolute;
+    content: "";
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(20px);
+    z-index: -1;
+  }
+
+  .card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 60px);
+    max-width: 280px;
+    min-height: 380px;
+
+    background: $dark-gray;
+    border-radius: 8px;
+    overflow: hidden;
+
+    @include mediumScreen() {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-column-gap: 20px;
+      padding: 35px;
+      min-height: 328px;
+      max-width: 560px;
+    }
+
+    .column1 {
+      .img_wrapper {
+        display: none;
+        height: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+
+        @include mediumScreen() {
+          display: block;
+          width: 170px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .backdrop {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 150px;
+
+        @include mediumScreen() {
+          display: none;
+        }
+      }
+    }
+
+    .column2 {
+      padding: 15px;
+
+      @include mediumScreen() {
+        padding: 0;
+      }
+
+      .text_wrapper {
+        padding-right: 34px;
+        margin-bottom: 20px;
+
+        @include mediumScreen() {
+          padding-right: 48px;
+        }
+
+        h4 {
+          font-size: 16px;
+          font-weight: 400;
+          color: $gray;
+          margin-bottom: 10px;
+        }
+
+        h3 {
+          font-size: 20px;
+          font-weight: 600;
+
+          .release_year {
+            font-weight: 400;
+            color: $gray;
+          }
+        }
+      }
+
+      .form {
+        .specify_button_wrapper {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+
+          .specify_button {
+            width: 15px;
+            height: 15px;
+            margin-right: 8px;
+          }
+
+          label {
+            font-size: 14px;
+          }
+
+          .date_input {
+            background: #fff
+              url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)
+              97% 50% no-repeat;
+            border-radius: 5px;
+
+            &::-webkit-inner-spin-button {
+              display: none;
+            }
+
+            &::-webkit-calendar-picker-indicator {
+              opacity: 0;
+            }
+          }
+        }
+
+        .button {
+          cursor: pointer;
+          border: none;
+          color: $white;
+          margin-top: 20px;
+          padding: 9px 12px;
+          border-radius: 5px;
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+
+          &:disabled {
+            cursor: not-allowed;
+          }
+        }
+
+        .delete_button {
+          background: $red;
+          margin-left: 8px;
+          transition: background 300ms ease;
+
+          &:hover {
+            background: rgba($color: $red, $alpha: 0.7);
+            transition: background 300ms ease;
+          }
+        }
+
+        .save_button {
+          background: $green;
+          transition: background 300ms ease;
+
+          &:hover {
+            background: rgba($color: $green, $alpha: 0.7);
+            transition: background 300ms ease;
+          }
+        }
+
+        .notification {
+          text-transform: capitalize;
+          color: $green;
+          font-size: 14px;
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+}

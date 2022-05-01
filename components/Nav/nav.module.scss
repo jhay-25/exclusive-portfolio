@@ -1,0 +1,156 @@
+@import "/styles/mixins";
+@import "/styles/variables";
+
+.header {
+  position: fixed;
+  top: 0;
+  background: transparent;
+  color: $white;
+  height: 84px;
+  width: 100%;
+  padding: 0 30px;
+  z-index: 99;
+  transition: 300ms ease;
+
+  @include largeScreen() {
+    height: 98px;
+    background: transparent !important;
+  }
+}
+
+.logo_wrapper {
+  flex-basis: 100%;
+  @include largeScreen() {
+    flex-basis: 0;
+  }
+
+  .logo {
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+  }
+}
+
+.nav {
+  height: 100%;
+}
+
+.row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+
+  @include largeScreen() {
+    justify-content: space-between;
+  }
+}
+
+.links_wrapper {
+  display: none;
+
+  @include largeScreen() {
+    display: flex;
+    flex-basis: 33.33%;
+  }
+}
+
+.nav_link {
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 12px;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  padding: 5px 15px;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.active_link {
+  background-color: $red;
+  color: #fff;
+}
+
+.auth_btn {
+  display: flex;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 20px;
+  height: 38px;
+  min-width: 83px;
+  border: solid 1px rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  transition: 300ms ease;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: $red;
+    transition: 300ms ease;
+  }
+}
+
+.file {
+  margin-right: 4px;
+  svg {
+    width: 10px;
+    color: $red;
+    transition: 300ms ease;
+  }
+}
+
+.menu_wrapper {
+  margin-left: 22px;
+  @include largeScreen() {
+    display: none;
+  }
+
+  .menu_button {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 36px;
+    height: 36px;
+
+    .menu_line {
+      display: inline-block;
+      height: 2px;
+      width: 100%;
+      background-color: $white;
+    }
+  }
+}
+
+.main_menu {
+  position: absolute;
+  display: none;
+  opacity: 0;
+  top: 84px;
+  left: 0;
+  height: calc(100vh - 84px);
+  width: 100vw;
+  backdrop-filter: blur(4px);
+  background-color: rgba($color: $black, $alpha: 0.5);
+
+  @include largeScreen() {
+    display: none !important;
+  }
+
+  .link_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+}

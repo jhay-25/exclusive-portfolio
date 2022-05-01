@@ -1,0 +1,48 @@
+@import "/styles/variables";
+@import "/styles/mixins";
+
+.hero {
+  position: relative;
+  color: $white;
+  height: 100%;
+  background: url(../../public/assets/images/rosie-fraser-1L71sPT5XKc-unsplash.jpg)
+    no-repeat center;
+  background-size: cover;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.text_wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 60px;
+
+  p {
+    text-align: center;
+    color: $red;
+    margin: 10px 0;
+  }
+
+  .h1 {
+    font-size: 12vw;
+
+    @include xSmallScreen() {
+      font-size: 9.6vw;
+    }
+
+    @include largeScreen() {
+      font-size: 120px;
+    }
+  }
+}

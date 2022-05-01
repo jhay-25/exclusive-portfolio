@@ -1,0 +1,115 @@
+@import "/styles/mixins";
+@import "/styles/variables";
+.row {
+  @include largeScreen() {
+    display: flex;
+  }
+}
+
+.image_wrapper {
+  @include largeScreen() {
+    height: 100vh;
+    width: 50%;
+    background: url(../public/assets/images/street.jpg) center no-repeat;
+    background-size: cover;
+  }
+
+  img {
+    width: 100%;
+
+    @include largeScreen() {
+      display: none;
+    }
+  }
+}
+
+.contact_wrapper {
+  padding: 100px 60px 90px;
+  @include largeScreen() {
+    width: 50%;
+  }
+
+  .contact_info_wrapper {
+    padding: 30px;
+    background: $dark-gray;
+
+    .info {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      text-align: left;
+
+      span {
+        display: inline-block;
+        min-width: 50%;
+        line-height: 165%;
+
+        @include smallScreen() {
+          min-width: none;
+          width: 50%;
+        }
+      }
+
+      .info_value {
+        color: $gray;
+      }
+    }
+  }
+
+  .contact_form_wrapper {
+    margin-top: 60px;
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 44px;
+    }
+
+    .contact_form {
+      .input_field {
+        font-family: Lato, sans-serif;
+        width: 100%;
+        background: $darkest-gray;
+        border: 1px solid $dark-gray;
+        margin-bottom: 20px;
+        min-height: 42px;
+        padding: 10px;
+        color: $white;
+
+        &::placeholder {
+          color: $gray;
+          font-size: 14px;
+        }
+
+        &:focus {
+          border: 1px solid $red !important;
+          outline: none;
+        }
+      }
+
+      .submit_button {
+        cursor: pointer;
+        width: 120px;
+        height: 35px;
+        padding: 8px 30px;
+        background: $red;
+        border: none;
+        border-radius: 2px;
+        color: $white;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 12px;
+
+        &:hover {
+          background: $hover_button_red;
+        }
+      }
+
+      .message_status {
+        font-size: 14px;
+        color: rgb(59, 235, 67);
+        margin-top: 10px;
+      }
+    }
+  }
+}

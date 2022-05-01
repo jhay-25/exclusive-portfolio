@@ -1,0 +1,41 @@
+@import "/styles/variables";
+
+.pagination_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .button_wrapper {
+    display: flex;
+
+    a {
+      margin: 5px;
+      padding: 6px 12px;
+      background: rgba($color: $gray, $alpha: 0.1);
+      border-radius: 4px;
+      font-size: 14px;
+      transition: background 100ms ease;
+
+      &:hover {
+        background: rgba($color: $gray, $alpha: 0.5);
+        transition: background 100ms ease;
+      }
+    }
+
+    .active {
+      background: $red;
+
+      &:hover {
+        background: $red;
+      }
+    }
+
+    .prev_next {
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+    }
+  }
+}

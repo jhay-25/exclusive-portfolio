@@ -1,0 +1,35 @@
+@mixin xSmallScreen() {
+  @media (min-width: 280px) {
+    @content;
+  }
+}
+
+@mixin smallScreen() {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin mediumScreen() {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin largeScreen() {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin xlScreen() {
+  @media (min-width: 1540px) {
+    @content;
+  }
+}
+
+@mixin xxlScreen() {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}

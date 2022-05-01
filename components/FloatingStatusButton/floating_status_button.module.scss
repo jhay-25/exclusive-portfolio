@@ -1,0 +1,105 @@
+@import "/styles/variables";
+@import "/styles/mixins";
+
+.status_container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 100px;
+  bottom: 85px;
+  z-index: 1;
+  max-width: 240px;
+  min-width: 240px;
+  min-height: 105px;
+  height: auto;
+
+  @include mediumScreen {
+    max-width: 268px;
+  }
+}
+
+.floating_container {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  width: 55px;
+  height: 55px;
+  z-index: 2;
+
+  &:hover {
+    height: 400px;
+  }
+
+  &:hover .floating_button_hidden {
+    transform: scale(1);
+    transition: 100ms ease;
+  }
+
+  &:hover .media_button {
+    transition-delay: 100ms;
+  }
+
+  &:hover .music_button {
+    transition-delay: 200ms;
+  }
+
+  .floating_button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    right: 0;
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    background: $red;
+    cursor: pointer;
+    transition: 100ms ease;
+
+    &:hover {
+      background: $hover_button_red;
+      transition: 100ms ease;
+    }
+
+    svg {
+      width: 25px;
+      height: 25px;
+      fill: $white;
+    }
+  }
+
+  .floating_button_hidden {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    cursor: pointer;
+    transform: scale(0);
+    transition: 100ms ease;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      fill: $white;
+    }
+  }
+
+  .media_button {
+    background: $media_button;
+    bottom: 110px;
+    transition-delay: 200ms;
+  }
+
+  .music_button {
+    background: $music_button;
+    bottom: 170px;
+    transition-delay: 100ms;
+  }
+}

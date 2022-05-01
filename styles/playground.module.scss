@@ -1,0 +1,112 @@
+@import "/styles/mixins";
+@import "/styles/variables";
+
+.row {
+  @include largeScreen() {
+    display: flex;
+  }
+}
+
+.image_wrapper {
+  @include largeScreen() {
+    height: 100vh;
+    width: 50%;
+    background: url(../public/assets/images/road.jpg) center no-repeat;
+    background-size: cover;
+  }
+
+  img {
+    width: 100%;
+
+    @include largeScreen() {
+      display: none;
+    }
+  }
+}
+
+.button_wrapper {
+  padding: 100px 60px 90px;
+  @include largeScreen() {
+    width: 50%;
+  }
+
+  .button {
+    position: relative;
+    padding: 30px;
+    width: 100%;
+    min-height: 232px;
+    margin-bottom: 30px;
+    border: 1px solid rgb(35, 35, 35);
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s ease;
+
+    &:hover {
+      background: $red;
+      transition: 0.3s ease;
+      border: 1px solid $red;
+    }
+
+    &:hover .small_icon svg {
+      fill: $white;
+      transition: 0.3s ease;
+    }
+
+    &:hover .large_icon svg {
+      fill: $white;
+      opacity: 0.2;
+      transition: 0.3s ease;
+    }
+
+    &:hover p {
+      color: $white;
+      transition: 0.3s ease;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 15px;
+      color: $gray;
+      transition: 0.3s ease;
+      line-height: 1.7rem;
+    }
+
+    .small_icon {
+      display: block;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 30px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: $red;
+        transition: 0.3s ease;
+      }
+    }
+
+    .large_icon {
+      display: block;
+      position: absolute;
+      top: -10%;
+      right: -10%;
+      width: 200px;
+      height: 200px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: rgba($color: $red, $alpha: 0.1);
+        transition: 0.3s ease;
+      }
+    }
+  }
+}
